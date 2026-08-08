@@ -5,7 +5,7 @@ import { Reveal, SectionHeading } from '@/components/Reveal';
 
 const stats = [
   { Icon: Award, value: '20+', label: 'Years Experience' },
-  { Icon: Globe2, value: '15+', label: 'Countries Served' },
+  { Icon: Globe2, value: '15+', label: 'Global Market Countries' },
   { Icon: ClipboardCheck, value: '500+', label: 'Inspections Done' },
   { Icon: Users, value: '50+', label: 'Trusted Suppliers' },
 ];
@@ -77,7 +77,7 @@ export default function About() {
             <Reveal delay={0.1}>
               <p className="text-ink-700 leading-relaxed text-base sm:text-lg text-balance">
                 {settings?.about ||
-                  'ZIYA TRADERS specializes in sourcing premium Granite, Marble, and Quartz from trusted Indian manufacturers. We provide end-to-end quality inspection, supplier verification, and export support.'}
+                  'ZIYA TRADERS specializes in sourcing premium Granite, Marble, and Quartz from trusted Indian manufacturers. We provide end-to-end quality inspection, supplier verification, and export support across global markets.'}
               </p>
             </Reveal>
 
