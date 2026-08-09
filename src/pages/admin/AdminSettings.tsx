@@ -74,7 +74,9 @@ export default function AdminSettings() {
         {/* Company info */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-card p-5 sm:p-6 rounded-2xl space-y-4">
           <h3 className="font-display text-base sm:text-lg font-bold text-ink-900">Company Information</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:g
+          
+          rid-cols-2 gap-4">
             <div><label className="label-lux">Company Name</label><input type="text" value={form.company_name} onChange={(e) => handleChange('company_name', e.target.value)} className="input-lux" /></div>
             <div><label className="label-lux">Owner</label><input type="text" value={form.owner} onChange={(e) => handleChange('owner', e.target.value)} className="input-lux" /></div>
             <div><label className="label-lux">Tagline</label><input type="text" value={form.tagline} onChange={(e) => handleChange('tagline', e.target.value)} className="input-lux" /></div>

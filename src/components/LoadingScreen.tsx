@@ -16,13 +16,13 @@ export default function LoadingScreen() {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[100] bg-[#3B0202] flex items-center justify-center overflow-hidden"
+        className="fixed inset-0 z-[100] bg-[#05070f] flex items-center justify-center overflow-hidden"
         exit={{ opacity: 0, scale: 1.03 }}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       >
-        {/* Soft Golden Ambient Radial Aura */}
+        {/* Soft Electric Blue Ambient Radial Aura */}
         <motion.div 
-          className="absolute w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-amber-500/20 blur-3xl pointer-events-none"
+          className="absolute w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-cyan-500/20 blur-3xl pointer-events-none"
           animate={{
             scale: [0.5, 1.25, 1],
             opacity: [0.1, 0.7, 0.45],
@@ -33,28 +33,28 @@ export default function LoadingScreen() {
           }}
         />
 
-        {/* Outer Golden Diamond Shape Frame */}
+        {/* Outer Cyber Cyan Diamond Shape Frame */}
         <motion.div
-          className="absolute w-64 h-64 sm:w-80 sm:h-80 border-2 border-amber-400/40 rotate-45 pointer-events-none shadow-[0_0_25px_rgba(251,191,36,0.25)]"
+          className="absolute w-64 h-64 sm:w-80 sm:h-80 border-2 border-cyan-400/40 rotate-45 pointer-events-none shadow-[0_0_25px_rgba(6,182,212,0.4)]"
           initial={{ scale: 0, opacity: 0, rotate: 0 }}
           animate={{ 
             scale: [0, 1.12, 1], 
             opacity: [0, 0.8, 0.5], 
             rotate: 45,
-            borderColor: ['rgba(251,191,36,0.2)', 'rgba(251,191,36,0.7)', 'rgba(251,191,36,0.4)']
+            borderColor: ['rgba(6,182,212,0.2)', 'rgba(6,182,212,0.8)', 'rgba(6,182,212,0.4)']
           }}
           transition={{ duration: 5, ease: [0.16, 1, 0.3, 1] }}
         />
 
-        {/* Inner Secondary Diamond Frame accent */}
+        {/* Inner Secondary Diamond Frame Accent */}
         <motion.div
-          className="absolute w-56 h-56 sm:w-72 sm:h-72 border border-amber-300/20 rotate-45 pointer-events-none"
+          className="absolute w-56 h-56 sm:w-72 sm:h-72 border border-blue-400/30 rotate-45 pointer-events-none"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: [0, 1.05, 1], opacity: [0, 0.5, 0.25] }}
           transition={{ duration: 5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         />
 
-        {/* Micro Golden Diamond Dust Particles */}
+        {/* Micro Cyan Diamond Dust Particles */}
         {[
           { top: '38%', left: '36%', delay: 1.1 },
           { top: '30%', right: '40%', delay: 1.7 },
@@ -65,7 +65,7 @@ export default function LoadingScreen() {
         ].map((pt, i) => (
           <motion.div
             key={`dot-${i}`}
-            className="absolute w-1.5 h-1.5 bg-amber-300 rotate-45 shadow-[0_0_6px_rgba(251,191,36,0.9)] pointer-events-none"
+            className="absolute w-1.5 h-1.5 bg-cyan-300 rotate-45 shadow-[0_0_8px_rgba(34,211,238,1)] pointer-events-none"
             style={{ top: pt.top, left: pt.left, right: pt.right, bottom: pt.bottom }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{
@@ -89,7 +89,7 @@ export default function LoadingScreen() {
             }}
             transition={{ duration: 1.8, delay: s.delay, ease: "easeOut" }}
           >
-            <svg className={`${s.size} text-amber-300 drop-shadow-[0_0_8px_rgba(251,191,36,0.9)]`} viewBox="0 0 24 24" fill="currentColor">
+            <svg className={`${s.size} text-cyan-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.9)]`} viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z" />
             </svg>
           </motion.div>
@@ -106,9 +106,9 @@ export default function LoadingScreen() {
               scale: [0.1, 1.15, 1], 
               opacity: [0, 1, 1],
               filter: [
-                'brightness(2.5) contrast(1.8) drop-shadow(0 0 45px rgba(251,191,36,0.95))',
-                'brightness(1.3) contrast(1.2) drop-shadow(0 0 30px rgba(251,191,36,0.8))',
-                'brightness(1) contrast(1) drop-shadow(0 0 22px rgba(251,191,36,0.65))'
+                'brightness(2.5) contrast(1.8) drop-shadow(0 0 45px rgba(6,182,212,0.95))',
+                'brightness(1.3) contrast(1.2) drop-shadow(0 0 30px rgba(6,182,212,0.8))',
+                'brightness(1) contrast(1) drop-shadow(0 0 22px rgba(6,182,212,0.65))'
               ]
             }}
             transition={{

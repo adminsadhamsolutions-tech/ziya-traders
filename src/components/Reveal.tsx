@@ -41,20 +41,20 @@ export function SectionHeading({
       {eyebrow && (
         <Reveal>
           <div className={`${center ? 'justify-center' : ''} flex items-center gap-3 mb-3`}>
-            <span className="w-6 h-px bg-gold-400 sm:w-8" />
-            <span className="eyebrow">{eyebrow}</span>
-            <span className="w-6 h-px bg-gold-400 sm:w-8" />
+            <span className="w-6 h-px bg-cyan-500 sm:w-8" />
+            <span className="eyebrow text-cyan-600 font-semibold tracking-wider text-xs uppercase">{eyebrow}</span>
+            {center && <span className="w-6 h-px bg-cyan-500 sm:w-8" />}
           </div>
         </Reveal>
       )}
       <Reveal delay={0.1}>
-        <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-900 leading-tight">
+        <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
           {title}
         </h2>
       </Reveal>
       {subtitle && (
         <Reveal delay={0.2}>
-          <p className="mt-3 text-ink-500 leading-relaxed text-base sm:text-lg">{subtitle}</p>
+          <p className="mt-3 text-slate-600 leading-relaxed text-base sm:text-lg">{subtitle}</p>
         </Reveal>
       )}
     </div>

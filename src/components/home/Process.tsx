@@ -64,10 +64,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="section-pad relative bg-slate-50 text-slate-800 overflow-hidden py-20">
-      {/* Background Lighting Accents */}
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none" />
+    <section id="process" className="section-pad relative bg-slate-50/90 text-slate-800 overflow-hidden py-20">
+      {/* Light Cyan Ambient Background Glows */}
+      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-cyan-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-lux relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -94,12 +94,12 @@ export default function Process() {
                 >
                   {/* Content Box */}
                   <div className={`w-full lg:w-1/2 ${isEven ? 'lg:order-1 lg:text-right' : 'lg:order-2 lg:text-left'}`}>
-                    <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md hover:border-amber-400/60 transition-all duration-300">
+                    <div className="bg-white/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
                       <div className={`flex items-center gap-3 mb-4 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                        <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold">
+                        <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center shrink-0 font-bold">
                           <step.Icon className="w-5 h-5" />
                         </div>
-                        <span className="font-display text-2xl font-bold text-amber-600">
+                        <span className="font-display text-2xl font-bold text-cyan-600">
                           Step {String(i + 1).padStart(2, '0')}
                         </span>
                       </div>
@@ -115,14 +115,14 @@ export default function Process() {
 
                   {/* Center Dot Indicator (Desktop) */}
                   <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center z-10">
-                    <div className="w-9 h-9 rounded-full bg-white border-2 border-amber-500 shadow-md flex items-center justify-center">
-                      <div className="w-3.5 h-3.5 rounded-full bg-amber-500" />
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-cyan-500 shadow-md flex items-center justify-center">
+                      <div className="w-3.5 h-3.5 rounded-full bg-cyan-500" />
                     </div>
                   </div>
 
                   {/* Image Card Box */}
                   <div className={`w-full lg:w-1/2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-sm bg-white p-2 group hover:shadow-md transition-shadow">
+                    <div className="overflow-hidden rounded-3xl border border-slate-200/80 shadow-sm bg-white p-2 group hover:shadow-md transition-shadow">
                       <div className="overflow-hidden rounded-2xl h-56 sm:h-64 relative">
                         <img
                           src={step.image}
@@ -130,7 +130,7 @@ export default function Process() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-slate-900/10 group-hover:opacity-0 transition-opacity" />
+                        <div className="absolute inset-0 bg-slate-950/10 group-hover:opacity-0 transition-opacity" />
                       </div>
                     </div>
                   </div>

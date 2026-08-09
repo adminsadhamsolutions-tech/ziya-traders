@@ -26,10 +26,10 @@ const categories = [
 
 export default function ProductsPreview() {
   return (
-    <section id="products" className="section-pad relative bg-slate-50 text-slate-800 py-16 sm:py-24 overflow-hidden">
-      {/* Light Ambient Lighting Glows */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none" />
+    <section id="products" className="section-pad relative bg-slate-50/90 text-slate-800 py-16 sm:py-24 overflow-hidden">
+      {/* Light Ambient Lighting Glows (Cyan & Blue Theme) */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-cyan-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-lux relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -49,7 +49,7 @@ export default function ProductsPreview() {
             >
               <Link
                 to={`/products?category=${cat.slug}`}
-                className="group relative block overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-400/60 transition-all duration-500 h-80 sm:h-96 lg:h-[460px]"
+                className="group relative block overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-500/60 hover:shadow-cyan-500/10 transition-all duration-500 h-80 sm:h-96 lg:h-[460px]"
               >
                 {/* Product Background Image */}
                 <img
@@ -59,13 +59,13 @@ export default function ProductsPreview() {
                   loading="lazy"
                 />
 
-                {/* Light-friendly Gradient Overlay */}
+                {/* Light-friendly Dark Gradient Overlay for Readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent transition-opacity duration-300" />
 
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 text-white">
                   <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-amber-300 mb-1">
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-300 mb-1">
                       <Sparkles className="w-3 h-3" /> Sourcing Collection
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -78,10 +78,10 @@ export default function ProductsPreview() {
 
                   {/* Action Link */}
                   <div className="flex items-center justify-between pt-3 border-t border-white/20">
-                    <span className="text-xs sm:text-sm font-semibold text-amber-300 group-hover:text-amber-200 transition-colors">
+                    <span className="text-xs sm:text-sm font-semibold text-cyan-300 group-hover:text-cyan-200 transition-colors">
                       Explore {cat.name}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300">
+                    <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-cyan-400 group-hover:text-slate-950 transition-all duration-300 shadow-sm">
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function ProductsPreview() {
 
                 {/* Top Corner Floating Icon */}
                 <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-slate-800 shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
-                  <ArrowRight className="w-4 h-4 text-amber-600 -rotate-45" />
+                  <ArrowRight className="w-4 h-4 text-cyan-600 -rotate-45" />
                 </div>
               </Link>
             </motion.div>

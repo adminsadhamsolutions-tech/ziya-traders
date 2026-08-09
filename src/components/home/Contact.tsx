@@ -67,12 +67,12 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section-pad relative overflow-hidden bg-slate-50 text-slate-800">
-      {/* Soft Light Background Glows */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-amber-200/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-red-100/50 rounded-full blur-3xl pointer-events-none" />
+    <section id="contact" className="section-pad relative overflow-hidden bg-slate-50/90 text-slate-800 py-16 lg:py-24">
+      {/* Light Cyan Ambient Background Glows */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-cyan-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container-lux relative z-10">
+      <div className="container-lux relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Get In Touch"
           title="Let's Discuss Your Natural Stone & Sourcing Needs"
@@ -81,7 +81,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-8">
           
-          {/* Left Column: Contact Cards & Map */}
+          {/* Left Column: Contact Cards, WhatsApp & Map */}
           <div className="lg:col-span-5 space-y-6">
             <Reveal>
               <div className="space-y-3.5">
@@ -91,14 +91,14 @@ export default function Contact() {
                     href={item.href}
                     target={item.isExternal ? '_blank' : '_self'}
                     rel={item.isExternal ? 'noreferrer' : ''}
-                    className="group bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 hover:border-amber-400 transition-all duration-300 flex items-start gap-4 block shadow-sm hover:shadow-md"
+                    className="group bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/80 hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 flex items-start gap-4 block shadow-sm"
                   >
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center shrink-0 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
                       <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 mb-0.5">{item.label}</p>
-                      <p className="text-sm sm:text-base font-medium text-slate-900 group-hover:text-amber-800 transition-colors leading-snug break-words">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-cyan-700 mb-0.5">{item.label}</p>
+                      <p className="text-sm sm:text-base font-medium text-slate-900 group-hover:text-cyan-600 transition-colors leading-snug break-words">
                         {item.value}
                       </p>
                     </div>
@@ -109,7 +109,7 @@ export default function Contact() {
 
             {/* WhatsApp Card */}
             <Reveal delay={0.1}>
-              <div className="bg-emerald-50 p-5 rounded-2xl border border-emerald-200 relative overflow-hidden group">
+              <div className="bg-emerald-50/80 backdrop-blur-md p-5 rounded-2xl border border-emerald-200 relative overflow-hidden group shadow-sm">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative z-10">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
@@ -124,7 +124,7 @@ export default function Contact() {
                     href={`https://wa.me/${settings?.whatsapp || '918870380977'}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all font-semibold text-sm shadow-sm shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all font-semibold text-sm shadow-md shadow-emerald-600/20 shrink-0"
                   >
                     <MessageCircle className="w-5 h-5 fill-current" />
                     <span>WhatsApp Now</span>
@@ -135,7 +135,7 @@ export default function Contact() {
 
             {/* Embedded Google Map Box */}
             <Reveal delay={0.15}>
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative group h-60 sm:h-64">
+              <div className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm relative group h-60 sm:h-64">
                 <iframe
                   title="ZIYA TRADERS Location"
                   src="https://www.google.com/maps?q=Hosur,Tamil+Nadu,India&output=embed"
@@ -144,7 +144,7 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm border border-slate-200">
-                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                  <MapPin className="w-3.5 h-3.5 text-cyan-600" />
                   <span className="font-medium">Hosur Granite Sourcing Hub</span>
                 </div>
               </div>
@@ -154,14 +154,14 @@ export default function Contact() {
           {/* Right Column: Clean Light Form */}
           <div className="lg:col-span-7">
             <Reveal delay={0.2}>
-              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-lg relative overflow-hidden">
+              <div className="bg-white/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-md relative overflow-hidden">
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                   <div>
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-900">Send Us a Direct Message</h3>
                     <p className="text-xs sm:text-sm text-slate-500 mt-1">Fill out the parameters below to request product availability or inspection quotes.</p>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0 hidden sm:flex">
-                    <Sparkles className="w-5 h-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center shrink-0 hidden sm:flex">
+                    <Sparkles className="w-5 h-5 text-cyan-600" />
                   </div>
                 </div>
 
@@ -169,7 +169,7 @@ export default function Contact() {
                   {/* Full Name */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-semibold mb-1.5 text-slate-700">
-                      <User className="w-3.5 h-3.5 text-amber-600" />
+                      <User className="w-3.5 h-3.5 text-cyan-600" />
                       Full Name *
                     </label>
                     <input
@@ -177,7 +177,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition-all text-sm"
                       placeholder="e.g. John Doe / Global Stone Imports"
                     />
                   </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="flex items-center gap-1.5 text-xs font-semibold mb-1.5 text-slate-700">
-                        <Mail className="w-3.5 h-3.5 text-amber-600" />
+                        <Mail className="w-3.5 h-3.5 text-cyan-600" />
                         Email Address *
                       </label>
                       <input
@@ -194,20 +194,20 @@ export default function Contact() {
                         required
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition-all text-sm"
                         placeholder="buyer@company.com"
                       />
                     </div>
                     <div>
                       <label className="flex items-center gap-1.5 text-xs font-semibold mb-1.5 text-slate-700">
-                        <Phone className="w-3.5 h-3.5 text-amber-600" />
+                        <Phone className="w-3.5 h-3.5 text-cyan-600" />
                         Phone Number
                       </label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-all text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition-all text-sm"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
@@ -216,7 +216,7 @@ export default function Contact() {
                   {/* Message */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-semibold mb-1.5 text-slate-700">
-                      <MessageSquare className="w-3.5 h-3.5 text-amber-600" />
+                      <MessageSquare className="w-3.5 h-3.5 text-cyan-600" />
                       Inquiry Details *
                     </label>
                     <textarea
@@ -224,7 +224,7 @@ export default function Contact() {
                       rows={5}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition-all text-sm resize-none"
                       placeholder="Specify your stone requirement (e.g. Granite, Marble, Quartz), dimensions, quantity, or inspection site locations..."
                     />
                   </div>
@@ -233,7 +233,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === 'sending' || status === 'sent'}
-                    className="w-full py-3.5 rounded-xl bg-rose-700 hover:bg-rose-800 text-white font-medium text-sm sm:text-base flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70 transition-all duration-300"
+                    className="w-full py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:shadow-lg disabled:opacity-70 transition-all duration-300"
                   >
                     {status === 'sending' ? (
                       <span className="flex items-center gap-2">
