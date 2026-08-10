@@ -1,38 +1,31 @@
 import { motion } from 'framer-motion';
-import { Award, Globe2, ClipboardCheck, Users, ShieldCheck, CheckCircle2, Search, Eye } from 'lucide-react';
+import { Globe2, ClipboardCheck, Users, Search, Eye } from 'lucide-react';
 import { useSettings } from '@/hooks/useSettings';
 import { Reveal, SectionHeading } from '@/components/Reveal';
 
 const stats = [
-  { Icon: Award, value: '20+', label: 'Years Experience' },
   { Icon: Globe2, value: '15+', label: 'Global Market Countries' },
   { Icon: ClipboardCheck, value: '500+', label: 'Inspections Done' },
   { Icon: Users, value: '50+', label: 'Trusted Suppliers' },
 ];
 
-const highlights = [
-  'Factory Audits & Production Monitoring',
-  'Strict Pre-Shipment Quality Inspections',
-  'Transparent Sourcing & Supplier Verification',
-];
-
 const services = [
-{
-  icon: Search,
-  title: 'Custom Product Sourcing',
-  description:
-    'Looking for specific products from other suppliers? We identify, negotiate, and source high-grade materials directly from reliable sellers matched to your exact specifications.',
-  image: '/room01.png',
-  tag: 'Sourcing Support',
-},
-{
-  icon: Eye,
-  title: 'Third-Party Product Inspection',
-  description:
-    'Already buying from another seller? Our expert team conducts independent, onsite quality, dimension, and packaging verification before final shipment.',
-  image: '/inspection01.png',
-  tag: 'Quality Control',
-},
+  {
+    icon: Search,
+    title: 'Custom Product Sourcing',
+    description:
+      'Looking for specific products from other suppliers? We identify, negotiate, and source high-grade materials directly from reliable sellers matched to your exact specifications.',
+    image: '/room01.png',
+    tag: 'Sourcing Support',
+  },
+  {
+    icon: Eye,
+    title: 'Third-Party Product Inspection',
+    description:
+      'Already buying from another seller? Our expert team conducts independent, onsite quality, dimension, and packaging verification before final shipment.',
+    image: '/inspection01.png',
+    tag: 'Quality Control',
+  },
 ];
 
 export default function About() {
@@ -70,29 +63,6 @@ export default function About() {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80" />
                     </div>
                   </div>
-
-                  {/* Floating Metric Badge */}
-                  <motion.div
-                    className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 bg-white/95 p-4 sm:p-5 rounded-2xl border border-sky-200 shadow-xl shadow-sky-900/10 backdrop-blur-xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shrink-0 shadow-md text-white">
-                        <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </div>
-                      <div>
-                        <p className="font-display text-2xl sm:text-3xl text-sky-700 font-extrabold leading-none">
-                          20+
-                        </p>
-                        <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                          Years Industry Expertise
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
                 </div>
               </Reveal>
             </div>
@@ -107,49 +77,34 @@ export default function About() {
               </Reveal>
 
               {/* Founder Highlight Card */}
-<Reveal delay={0.2}>
-  <div className="bg-white/80 p-5 sm:p-7 rounded-2xl border border-sky-200/80 shadow-lg shadow-sky-900/5 backdrop-blur-md hover:border-sky-400/50 transition-all">
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
-      {/* Bigger Founder Profile Avatar Image */}
-      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-sky-400/60 shadow-lg shrink-0 bg-sky-100">
-        <img
-          src="/mdimg.jpeg"
-          alt="Javith Akthar - Founder"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div>
-        <div className="flex items-center gap-2.5 flex-wrap">
-          <p className="font-display text-lg sm:text-xl text-slate-900 font-bold">
-            Founder: Javith Akthar
-          </p>
-          <span className="text-[10px] uppercase tracking-wider font-bold bg-sky-100 text-sky-800 border border-sky-200 px-2.5 py-0.5 rounded-full">
-            Industry Veteran
-          </span>
-        </div>
-        <p className="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
-          20+ years specializing in Granite Procurement, Factory Audits & Quality Control Inspection.
-        </p>
-      </div>
-    </div>
-  </div>
-</Reveal>
-
-              {/* Highlight Bullet Points */}
-              <Reveal delay={0.25}>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {highlights.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
-                      <span>{item}</span>
+              <Reveal delay={0.2}>
+                <div className="bg-white/80 p-5 sm:p-7 rounded-2xl border border-sky-200/80 shadow-lg shadow-sky-900/5 backdrop-blur-md hover:border-sky-400/50 transition-all">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+                    {/* Bigger Founder Profile Avatar Image */}
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-sky-400/60 shadow-lg shrink-0 bg-sky-100">
+                      <img
+                        src="/mdimg.jpeg"
+                        alt="Javith Akthar - Founder"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  ))}
+                    <div>
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        <p className="font-display text-lg sm:text-xl text-slate-900 font-bold">
+                          Founder: Javith Akthar
+                        </p>
+                      </div>
+                      <p className="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+                        20+ years specializing in Granite Procurement, Factory Audits & Quality Control Inspection.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
 
               {/* Stats Grid */}
               <Reveal delay={0.3}>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
                   {stats.map(({ Icon, value, label }) => (
                     <div
                       key={label}
@@ -216,11 +171,6 @@ export default function About() {
                       <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                         {service.description}
                       </p>
-
-                      <div className="mt-5 pt-4 border-t border-sky-100 flex items-center gap-2 text-sky-700 font-semibold text-xs sm:text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                        <span>Tailored service available upon request</span>
-                      </div>
                     </div>
                   </motion.div>
                 </Reveal>

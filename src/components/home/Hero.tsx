@@ -87,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-5 sm:mt-8 text-sm sm:text-xl text-slate-800 max-w-3xl leading-relaxed font-medium px-2 sm:px-0 drop-shadow-sm"
         >
-          Serving <strong className="text-slate-950 font-bold">international, domestic, and local buyers</strong> with complete solutions for <strong className="text-slate-950 font-bold">all commercial projects</strong> and <strong className="text-slate-950 font-bold">housing design materials</strong>. We provide rigorous <strong className="text-slate-950 font-bold underline decoration-sky-600/60 underline-offset-4">export quality inspection</strong> alongside end-to-end <strong className="text-slate-950 font-bold">export solutions</strong> for India’s finest natural stones.
+          Serving <strong className="text-slate-950 font-bold">, domestic , international, and local buyers</strong> with complete solutions for <strong className="text-slate-950 font-bold">all commercial projects</strong> and <strong className="text-slate-950 font-bold">housing design materials</strong>. We provide rigorous <strong className="text-slate-950 font-bold underline decoration-sky-600/60 underline-offset-4">export quality inspection</strong> alongside end-to-end <strong className="text-slate-950 font-bold">export solutions</strong> for India’s finest natural stones.
         </motion.p>
 
         {/* Feature Badges */}

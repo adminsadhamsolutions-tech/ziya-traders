@@ -9,7 +9,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   email: 'javithjr2015@gmail.com',
   phone: '+91 8870380977',
   address:
-    'Shop No 81, Near Cambridge School, Thiruvalluvar Nagar, Hosur, Krishnagiri District, Tamil Nadu, India, 635109',
+    'Ziya Traders, 81, Near Cambridge School, Thiruvalluvar Nagar, Hosur, Krishnagiri District, Tamil Nadu, India, 635109',
   gst: '33BGEPJ7002C1Z4',
   logo_url: '',
   hero_image_url: '',

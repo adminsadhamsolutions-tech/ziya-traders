@@ -76,7 +76,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Get In Touch"
           title="Let's Discuss Your Natural Stone & Sourcing Needs"
-          subtitle="Direct procurement assistance, factory audit requests, or pre-shipment inspection queries—our team responds within 24 business hours."
+          subtitle="Direct procurement assistance, factory audit requests, or pre-shipment inspection queries—our team responds within 12 business hours."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-8">
