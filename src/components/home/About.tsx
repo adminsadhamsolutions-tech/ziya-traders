@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Globe2, ClipboardCheck, Users, Search, Eye } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Globe2, ClipboardCheck, Users, Search, Eye, ZoomIn, X } from 'lucide-react';
 import { useSettings } from '@/hooks/useSettings';
 import { Reveal, SectionHeading } from '@/components/Reveal';
 
@@ -30,6 +31,18 @@ const services = [
 
 export default function About() {
   const { settings } = useSettings();
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  // Close lightbox on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveImage(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const showcaseImg = "https://images.pexels.com/photos/30112372/pexels-photo-30112372.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
   return (
     <section id="about" className="section-pad relative overflow-hidden bg-gradient-to-b from-sky-50/60 via-white to-sky-50/40 text-slate-900 py-16 lg:py-24">
@@ -47,20 +60,27 @@ export default function About() {
           />
 
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mt-10">
-            {/* Left Showcase Image */}
+            {/* Left Showcase Image (Enlarged & Interactive) */}
             <div className="lg:col-span-5">
               <Reveal>
-                <div className="relative mx-auto max-w-md lg:max-w-none">
-                  {/* Glassmorphic Frame */}
-                  <div className="bg-white/80 backdrop-blur-md overflow-hidden rounded-2xl p-2.5 border border-sky-200/80 shadow-2xl shadow-sky-900/10">
-                    <div className="overflow-hidden rounded-xl relative group">
+                <div className="relative mx-auto max-w-lg lg:max-w-none">
+                  <div className="bg-white/80 backdrop-blur-md overflow-hidden rounded-2xl p-3 border border-sky-200/80 shadow-2xl shadow-sky-900/10">
+                    <div 
+                      onClick={() => setActiveImage(showcaseImg)}
+                      className="overflow-hidden rounded-xl relative group cursor-pointer"
+                    >
                       <img
-                        src="https://images.pexels.com/photos/30112372/pexels-photo-30112372.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                        src={showcaseImg}
                         alt="Stone manufacturing facility"
-                        className="w-full h-72 sm:h-96 lg:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-80 sm:h-[420px] lg:h-[520px] object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      
+                      {/* Zoom Indicator Icon Badge */}
+                      <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-slate-800 p-2.5 rounded-full shadow-lg border border-sky-100 opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+                        <ZoomIn className="w-5 h-5 text-sky-600" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -80,13 +100,19 @@ export default function About() {
               <Reveal delay={0.2}>
                 <div className="bg-white/80 p-5 sm:p-7 rounded-2xl border border-sky-200/80 shadow-lg shadow-sky-900/5 backdrop-blur-md hover:border-sky-400/50 transition-all">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
-                    {/* Bigger Founder Profile Avatar Image */}
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-sky-400/60 shadow-lg shrink-0 bg-sky-100">
+                    {/* Founder Profile Avatar */}
+                    <div 
+                      onClick={() => setActiveImage("/mdimg.jpeg")}
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-sky-400/60 shadow-lg shrink-0 bg-sky-100 cursor-pointer group relative"
+                    >
                       <img
                         src="/mdimg.jpeg"
                         alt="Javith Akthar - Founder"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <ZoomIn className="w-5 h-5 text-white" />
+                      </div>
                     </div>
                     <div>
                       <div className="flex items-center gap-2.5 flex-wrap">
@@ -143,7 +169,10 @@ export default function About() {
                     className="bg-white/80 backdrop-blur-md overflow-hidden rounded-2xl border border-sky-200/80 hover:border-sky-400/60 transition-all duration-300 shadow-xl shadow-sky-900/5 flex flex-col h-full group"
                   >
                     {/* Visual Banner Header */}
-                    <div className="relative h-48 sm:h-56 overflow-hidden">
+                    <div 
+                      onClick={() => setActiveImage(service.image)}
+                      className="relative h-52 sm:h-60 overflow-hidden cursor-pointer"
+                    >
                       <img
                         src={service.image}
                         alt={service.title}
@@ -156,13 +185,16 @@ export default function About() {
                         {service.tag}
                       </span>
 
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
-                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shrink-0 shadow-md text-white">
-                          <ServiceIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shrink-0 shadow-md text-white">
+                            <ServiceIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                          </div>
+                          <h3 className="font-display text-lg sm:text-xl font-bold text-white">
+                            {service.title}
+                          </h3>
                         </div>
-                        <h3 className="font-display text-lg sm:text-xl font-bold text-white">
-                          {service.title}
-                        </h3>
+                        <ZoomIn className="w-5 h-5 text-white/80 hover:text-white shrink-0" />
                       </div>
                     </div>
 
@@ -179,6 +211,44 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* FULL-SCREEN IMAGE MODAL LIGHTBOX */}
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveImage(null)}
+            className="fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none z-10"
+              aria-label="Close Preview"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Modal Image View */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()} 
+              className="relative max-w-5xl max-h-[90vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black flex items-center justify-center"
+            >
+              <img
+                src={activeImage}
+                alt="Full screen preview"
+                className="max-w-full max-h-[85vh] object-contain"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

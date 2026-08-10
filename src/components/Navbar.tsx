@@ -56,21 +56,23 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 py-2.5 bg-white/85 backdrop-blur-md border-b border-sky-100 shadow-md shadow-sky-900/5 font-sans"
+      className="fixed top-0 left-0 right-0 z-50 py-2 bg-white/85 backdrop-blur-md border-b border-sky-100 shadow-md shadow-sky-900/5 font-sans"
     >
       <nav className="container-lux px-4 sm:px-6 lg:px-12 flex items-center justify-between">
-        {/* LOGO IMAGE WITH SKY ILLUMINATION GLOW */}
+        {/* LOGO WITH PREMIUM GLASS BORDER & GOLDEN GLOW */}
         <Link 
           to="/" 
           onClick={() => handleNavigation('/')}
           className="group shrink-0 flex items-center py-1" 
           aria-label="Ziya Traders Home"
         >
-          <img 
-            src="/logo01.png" 
-            alt="Ziya Traders Logo" 
-            className="h-14 sm:h-20 lg:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(2,132,199,0.3)]" 
-          />
+          <div className="p-2 sm:p-2.5 bg-white/80 backdrop-blur-md rounded-2xl border border-amber-200/60 shadow-lg shadow-amber-500/10 group-hover:border-amber-400/80 transition-all duration-300">
+            <img 
+              src="/logo01.png" 
+              alt="Ziya Traders Logo" 
+              className="h-12 sm:h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-all duration-300 filter drop-shadow-[0_0_12px_rgba(217,119,6,0.35)]" 
+            />
+          </div>
         </Link>
 
         {/* DESKTOP NAVIGATION */}
